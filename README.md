@@ -1,6 +1,6 @@
-# Angular Offline
+# Angular PWA Offline
 
-RxJS operator and other utils catching offline errors in Angular apps.
+RxJS operator and other utils catching offline errors in Angular apps and PWA.
 
 ## Angular onsite training
 
