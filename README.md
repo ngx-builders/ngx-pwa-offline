@@ -23,7 +23,7 @@ There are also other tools for offline management, like guards.
 
 ## Getting started
 
-During beta, Angular 5 is required (Angular 4 LTS support will be available when final).
+Angular 5 and RxJS >= 5.5 are required.
 
 **Install with npm** or another package manager:
 
@@ -136,11 +136,9 @@ export class AppModule {}
 
 ## Angular support
 
-This lib major version is aligned to the major version of Angular. Meaning for Angular 4 you need version 4,
-for Angular 5 you need version 5, and so on.
+This lib major version is aligned to the major version of Angular. Meaning for Angular 5 you need version 5, and so on.
 
-When final, this lib will follow [Angular LTS support](https://github.com/angular/angular/blob/master/docs/RELEASE_SCHEDULE.md),
-meaning we support Angular 4 minimum, until October 2018.
+As RxJS >= 5.5 is required, which is the minimum dependency since Angular 5 only, the lib don't support Angular 4 and below.
 
 This module supports [AoT pre-compiling](https://angular.io/guide/aot-compiler).
 
