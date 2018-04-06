@@ -8,19 +8,19 @@ import { OfflineConfig, OFFLINE_CONFIG_DEFAULT } from './offline-config';
 import { OFFLINE_CONFIG_ROUTE_OFFLINE, OFFLINE_CONFIG_ROUTE_UNAVAILABLE } from './tokens';
 
 @Injectable()
-export class OfflineCatch {
+export class Offline {
 
-  static instance: OfflineCatch | null = null;
+  static instance: Offline | null = null;
 
   static catch<T>() {
 
-    return catchError<T, T>(OfflineCatch.catchCallback);
+    return catchError<T, T>(Offline.catchCallback);
 
   }
 
   protected static catchCallback<T>(error: any, caught: Observable<T>) {
 
-    if (!OfflineCatch.instance) {
+    if (!Offline.instance) {
 
       console.log('You need to import OfflineModule in your AppModule AND to inject the Offline service in your AppComponent constructor.');
 
@@ -30,15 +30,15 @@ export class OfflineCatch {
 
       const cancel = caught.pipe(filter(() => false));
 
-      if (isPlatformBrowser(OfflineCatch.instance.platformId) && !navigator.onLine) {
+      if (isPlatformBrowser(Offline.instance.platformId) && !navigator.onLine) {
 
-        OfflineCatch.instance.router.navigate([OfflineCatch.instance.routeOffline]);
+        Offline.instance.router.navigate([Offline.instance.routeOffline]);
 
         return cancel;
 
       } else if (error.status && (error.status >= 500 && error.status < 600)) {
 
-        OfflineCatch.instance.router.navigate([OfflineCatch.instance.routeUnavailable]);
+        Offline.instance.router.navigate([Offline.instance.routeUnavailable]);
 
         return cancel;
 
@@ -58,9 +58,9 @@ export class OfflineCatch {
     @Inject(OFFLINE_CONFIG_ROUTE_OFFLINE) public routeOffline = OFFLINE_CONFIG_DEFAULT.routeOffline,
     @Inject(OFFLINE_CONFIG_ROUTE_UNAVAILABLE) public routeUnavailable = OFFLINE_CONFIG_DEFAULT.routeUnavailable,
   ) {
-    OfflineCatch.instance = this;
+    Offline.instance = this;
   }
 
 }
 
-export const catchOffline = OfflineCatch.catch;
+export const catchOffline = Offline.catch;
