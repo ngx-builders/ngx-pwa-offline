@@ -10,7 +10,7 @@ import { OFFLINE_CONFIG_ROUTE_OFFLINE, OFFLINE_CONFIG_ROUTE_UNAVAILABLE } from '
 @Injectable()
 export class OfflineCatch {
 
-  static instance: OfflineCatch = null;
+  static instance: OfflineCatch | null = null;
 
   static catch<T>() {
 
