@@ -19,7 +19,7 @@ So if you want to get the benefice of the `async` pipe without breaking your app
 
 So here it is: a RxJS operator catching offline errors for you, so you can use the `async` pipe everywhere!
 
-There are also other tools for offline management, like guards.
+There are also other tools for offline management, like online status methods and guards.
 
 ## Getting started
 
@@ -60,7 +60,8 @@ export class AppComponent {
 }
 ```
 
-You won't use the service itself, but this step is required to setup the service. If you have an idea to avoid this step, feel free to contribute in [the related issue](https://github.com/cyrilletuzi/ngx-pwa-offline/issues/1).
+Note : you may not use the service itself and just the RxJS operator, but this step is required in all cases to setup the service.
+If you have an idea to avoid this step, feel free to contribute in [the related issue](https://github.com/cyrilletuzi/ngx-pwa-offline/issues/1).
 
 ## Catching offline errors
 
@@ -111,6 +112,58 @@ export class AppModule {}
 ```
 
 You need to provide the full URL, so *the leading `/` is required*.
+
+## Online status
+
+### Static check
+
+To check online status at some point:
+
+```typescript
+import { Offline } from 'ngx-pwa-offline';
+
+@Component({
+  template: `
+    <online-component *ngIf="isOnline"></online-component>
+    <offline-component *ngIf="!isOnline"></offline-component>
+  `
+})
+export class SomePageComponent implements OnInit {
+
+  isOnline = this.offline.isOnline;
+
+  constructor(protected offline: Offline) {}
+
+}
+```
+
+### Observable check
+
+To observe when online status changes:
+
+```typescript
+import { Offline } from 'ngx-pwa-offline';
+
+@Component({
+  template: `
+    <online-component *ngIf="isOnline$ | async; else isOffline"></online-component>
+    <ng-template #isOffline>
+      <offline-component></offline-component>
+    </ng-template>
+  `
+})
+export class SomePageComponent implements OnInit {
+
+  isOnline$ = this.offline.connectionChanges;
+
+  constructor(protected offline: Offline) {}
+
+}
+```
+
+Notes:
+- as usual in Angular, do *not* use the `async` pipe twice on the same `Observable`. The example above shows you how to manage those situations in the proper way,
+- this `Observable` does *not* auto-complete. Then you should either use the `async` pipe as above for automatic unsubscription, either you should unsubscribe manually (in `ngOnDestroy` method in most cases).
 
 ## Guards
 

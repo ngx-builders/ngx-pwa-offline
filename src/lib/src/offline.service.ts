@@ -2,7 +2,10 @@ import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router, CanActivate, CanActivateChild, CanLoad } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { catchError, filter } from 'rxjs/operators';
+import { fromEvent } from 'rxjs/observable/fromEvent';
+import { of } from 'rxjs/observable/of';
+import { merge } from 'rxjs/observable/merge';
+import { catchError, filter, mapTo, startWith } from 'rxjs/operators';
 
 import { OfflineConfig, OFFLINE_CONFIG_DEFAULT } from './offline-config';
 import { OFFLINE_CONFIG_ROUTE_OFFLINE, OFFLINE_CONFIG_ROUTE_UNAVAILABLE, OFFLINE_CONFIG_GUARDS_REDIRECT } from './tokens';
@@ -11,6 +14,11 @@ import { OFFLINE_CONFIG_ROUTE_OFFLINE, OFFLINE_CONFIG_ROUTE_UNAVAILABLE, OFFLINE
 export class Offline implements CanActivate, CanActivateChild, CanLoad {
 
   static instance: Offline | null = null;
+  connectionChanges: Observable<boolean>;
+
+  get isOnline(): boolean {
+    return isPlatformBrowser(this.platformId) ? navigator.onLine : true;
+  }
 
   static catch<T>() {
 
@@ -18,7 +26,7 @@ export class Offline implements CanActivate, CanActivateChild, CanLoad {
 
   }
 
-  protected static catchCallback<T>(error: any, caught: Observable<T>) {
+  protected static catchCallback<T>(error: any, caught: Observable<T>): Observable<T> {
 
     if (!Offline.instance) {
 
@@ -30,7 +38,7 @@ export class Offline implements CanActivate, CanActivateChild, CanLoad {
 
       const cancel = caught.pipe(filter(() => false));
 
-      if (isPlatformBrowser(Offline.instance.platformId) && !navigator.onLine) {
+      if (!Offline.instance.isOnline) {
 
         Offline.instance.router.navigate([Offline.instance.routeOffline]);
 
@@ -59,7 +67,12 @@ export class Offline implements CanActivate, CanActivateChild, CanLoad {
     @Inject(OFFLINE_CONFIG_ROUTE_UNAVAILABLE) public routeUnavailable = OFFLINE_CONFIG_DEFAULT.routeUnavailable,
     @Inject(OFFLINE_CONFIG_GUARDS_REDIRECT) public guardsRedirect = OFFLINE_CONFIG_DEFAULT.guardsRedirect,
   ) {
+
+    /* Store instance in a static property to allow access to injected services in the RxJS static operator */
     Offline.instance = this;
+
+    this.initConnectionObservable();
+
   }
 
   canActivate() {
@@ -74,10 +87,20 @@ export class Offline implements CanActivate, CanActivateChild, CanLoad {
     return this.guard();
   }
 
+  protected initConnectionObservable() {
+
+    this.connectionChanges = !isPlatformBrowser(this.platformId) ? of(true) : merge(
+      startWith(this.isOnline),
+      fromEvent(document, 'online').pipe(mapTo(true)),
+      fromEvent(document, 'offline').pipe(mapTo(false)),
+    );
+
+  }
+
 
   protected guard(): boolean {
 
-    if (isPlatformBrowser(this.platformId) && !navigator.onLine) {
+    if (!this.isOnline) {
 
       if (this.guardsRedirect) {
         this.router.navigate([this.routeOffline]);
