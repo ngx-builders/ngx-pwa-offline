@@ -19,7 +19,7 @@ So if you want to get the benefice of the `async` pipe without breaking your app
 
 So here it is: a RxJS operator catching offline errors for you, so you can use the `async` pipe everywhere!
 
-There are also other tools for offline management, like online status methods and guards.
+There are also other tools for offline management, like online status helpers and guards.
 
 ## Getting started
 
@@ -47,7 +47,7 @@ import { OfflineModule } from 'ngx-pwa-offline';
 export class AppModule {}
 ```
 
-Then you just have to **inject the `Offline` service *just once* in `AppComponent`** :
+Then you just have to **inject the `Offline` service *at least once***, for example in `AppComponent`:
 
 ```typescript
 import { Offline } from 'ngx-pwa-offline';
@@ -60,7 +60,7 @@ export class AppComponent {
 }
 ```
 
-Note : you may not use the service itself and just the RxJS operator, but this step is required in all cases to setup the service.
+Note : you may not use the service itself and just the RxJS operator, but an injection is required in all cases to setup the service.
 If you have an idea to avoid this step, feel free to contribute in [the related issue](https://github.com/cyrilletuzi/ngx-pwa-offline/issues/1).
 
 ## Catching offline errors
