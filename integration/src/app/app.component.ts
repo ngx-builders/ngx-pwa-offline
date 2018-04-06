@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LibService } from 'ngx-pwa-offline';
+import { Offline } from '@ngx-pwa/offline';
 
 @Component({
   selector: 'integration-app',
@@ -7,7 +7,6 @@ import { LibService } from 'ngx-pwa-offline';
 })
 export class AppComponent {
   meaning: number;
-  constructor(libService: LibService) {
-    this.meaning = libService.getMeaning();
+  constructor(offline: Offline) {
   }
 }

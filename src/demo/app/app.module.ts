@@ -1,11 +1,11 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { LibModule } from 'ngx-pwa-offline';
+import { OfflineModule } from '@ngx-pwa/offline';
 
 import { AppComponent }  from './app.component';
 
 @NgModule({
-  imports:      [ BrowserModule, LibModule],
+  imports:      [ BrowserModule, OfflineModule],
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
 })

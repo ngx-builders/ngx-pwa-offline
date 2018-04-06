@@ -15,8 +15,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "ngx-pwa-offline.js",
-    "flatModuleId": "ngx-pwa-offline",
+    "flatModuleOutFile": "offline.js",
+    "flatModuleId": "@ngx-pwa/offline",
     "genDir": "../../out-tsc/lib-gen-dir/"
   }
 }

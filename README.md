@@ -28,13 +28,13 @@ Angular 5 and RxJS >= 5.5 are required.
 **Install with npm** or another package manager:
 
 ```bash
-npm install ngx-pwa-offline
+npm install @ngx-pwa/offline
 ```
 
 Then **import the `OfflineModule` module in your app root module** (just once, do *NOT* re-import it in your submodules).
 
 ```typescript
-import { OfflineModule } from 'ngx-pwa-offline';
+import { OfflineModule } from '@ngx-pwa/offline';
 
 @NgModule({
   imports: [
@@ -50,7 +50,7 @@ export class AppModule {}
 Then you just have to **inject the `Offline` service *at least once***, for example in `AppComponent`:
 
 ```typescript
-import { Offline } from 'ngx-pwa-offline';
+import { Offline } from '@ngx-pwa/offline';
 
 @Component()
 export class AppComponent {
@@ -61,7 +61,7 @@ export class AppComponent {
 ```
 
 Note : you may not use the service itself and just the RxJS operator, but an injection is required in all cases to setup the service.
-If you have an idea to avoid this step, feel free to contribute in [the related issue](https://github.com/cyrilletuzi/ngx-pwa-offline/issues/1).
+If you have an idea to avoid this step, feel free to contribute in [the related issue](https://github.com/cyrilletuzi/@ngx-pwa/offline/issues/1).
 
 ## Catching offline errors
 
@@ -70,7 +70,7 @@ If you have an idea to avoid this step, feel free to contribute in [the related 
 Just **use the `catchOffline` RxJS operator**:
 
 ```typescript
-import { catchOffline } from 'ngx-pwa-offline';
+import { catchOffline } from '@ngx-pwa/offline';
 
 @Component({
   selector: 'some-page',
@@ -123,7 +123,7 @@ Note: you need to provide the full URL, so *the leading `/` is required*.
 To check online status at some point:
 
 ```typescript
-import { Offline } from 'ngx-pwa-offline';
+import { Offline } from '@ngx-pwa/offline';
 
 @Component({
   template: `
@@ -145,7 +145,7 @@ export class SomePageComponent implements OnInit {
 To observe when online status changes:
 
 ```typescript
-import { Offline } from 'ngx-pwa-offline';
+import { Offline } from '@ngx-pwa/offline';
 
 @Component({
   template: `
@@ -173,7 +173,7 @@ Notes:
 Guards catching offline errors are also available, for `CanActivate`, `CanActivateChild` and `CanLoad`. For example:
 
 ```typescript
-import { Offline } from 'ngx-pwa-offline';
+import { Offline } from '@ngx-pwa/offline';
 
 const routes: Routes = [
   { path: 'some-page', component: SomePageComponent, canActivate: [Offline] }
@@ -202,7 +202,7 @@ This module supports [Universal server-side rendering](https://github.com/angula
 
 ## Changelog
 
-[Changelog available here](https://github.com/cyrilletuzi/ngx-pwa-offline/blob/master/CHANGELOG.md).
+[Changelog available here](https://github.com/cyrilletuzi/@ngx-pwa/offline/blob/master/CHANGELOG.md).
 
 ## License
 

@@ -1,11 +1,11 @@
 {
-  "name": "ngx-pwa-offline",
-  "version": "5.0.0-beta.1",
+  "name": "@ngx-pwa/offline",
+  "version": "5.0.0-beta.3",
   "description": "RxJS operator and other utils catching offline errors in Angular apps and PWA",
-  "main": "./bundles/ngx-pwa-offline.umd.js",
-  "module": "./ngx-pwa-offline.es5.js",
-  "es2015": "./ngx-pwa-offline.js",
-  "typings": "./ngx-pwa-offline.d.ts",
+  "main": "./bundles/offline.umd.js",
+  "module": "./offline.es5.js",
+  "es2015": "./offline.js",
+  "typings": "./offline.d.ts",
   "author": "Cyrille Tuzi",
   "license": "MIT",
   "keywords": [
@@ -52,7 +52,7 @@
     "lint": "tslint ./src/**/*.ts -t verbose",
     "release": "standard-version",
     "reinstall": "rimraf node_modules && npm install",
-    "publish": "npm publish dist"
+    "publish": "npm publish dist --access public"
   },
   "peerDependencies": {
     "@angular/core": ">=5.0.0 <6.0.0",
