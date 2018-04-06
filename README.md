@@ -60,7 +60,7 @@ export class AppComponent {
 }
 ```
 
-You won't use the service itself, but this step is required to setup the service. If you have an idea to avoid this step, feel free to contribute in the related issue.
+You won't use the service itself, but this step is required to setup the service. If you have an idea to avoid this step, feel free to contribute in [the related issue](https://github.com/cyrilletuzi/angular-offline/issues/1).
 
 ## Catching offline errors
 
