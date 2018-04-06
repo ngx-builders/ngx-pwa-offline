@@ -47,15 +47,15 @@ import { OfflineModule } from 'ngx-pwa-offline';
 export class AppModule {}
 ```
 
-Then you just have to **inject the `Offline` service *just once* in `AppComponent`** :
+Then you just have to **inject the `OfflineCatch` service *just once* in `AppComponent`** :
 
 ```typescript
-import { Offline } from 'ngx-pwa-offline';
+import { OfflineCatch } from 'ngx-pwa-offline';
 
 @Component()
 export class AppComponent {
 
-  constructor(protected offline: Offline) {}
+  constructor(protected offlineCatch: OfflineCatch) {}
 
 }
 ```
