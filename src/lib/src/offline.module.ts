@@ -1,7 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { Offline } from './offline.service';
-import { OfflineGuard } from './offline.guard';
 import { OFFLINE_CONFIG_ROUTE_OFFLINE, OFFLINE_CONFIG_ROUTE_UNAVAILABLE, OFFLINE_CONFIG_GUARDS_REDIRECT } from './tokens';
 import { OfflineConfig, OFFLINE_CONFIG_DEFAULT } from './offline-config';
 
@@ -11,7 +10,6 @@ import { OfflineConfig, OFFLINE_CONFIG_DEFAULT } from './offline-config';
     { provide: OFFLINE_CONFIG_ROUTE_UNAVAILABLE, useValue: OFFLINE_CONFIG_DEFAULT.routeOffline },
     { provide: OFFLINE_CONFIG_GUARDS_REDIRECT, useValue: OFFLINE_CONFIG_DEFAULT.guardsRedirect },
     Offline,
-    OfflineGuard,
   ]
 })
 export class OfflineModule {

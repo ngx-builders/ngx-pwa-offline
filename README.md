@@ -117,10 +117,10 @@ You need to provide the full URL, so *the leading `/` is required*.
 Guards catching offline errors are also available, for `CanActivate`, `CanActivateChild` and `CanLoad`. For example:
 
 ```typescript
-import { OfflineGuard } from 'ngx-pwa-offline';
+import { Offline } from 'ngx-pwa-offline';
 
 const routes: Routes = [
-  { path: 'some-page', component: SomePageComponent, canActivate: [OfflineGuard] }
+  { path: 'some-page', component: SomePageComponent, canActivate: [Offline] }
 ];
 ```
 
