@@ -100,8 +100,8 @@ By default, `catchOffline` will redirect to:
 - `/offline` if the user is offline (no Internet connection),
 - `/unavailable` if the service is inaccessible (5xx HTTP errors).
 
-Note : creating the corresponding routes and components in your app is up to you,
-as we can't decide the content and design of these pages for you.
+Note: creating the corresponding routes and components in your app is up to you,
+as the lib can't decide the content and design of these pages for you.
 
 If you want to change the redirection URLs, just configure the module:
 
@@ -114,7 +114,7 @@ If you want to change the redirection URLs, just configure the module:
 export class AppModule {}
 ```
 
-You need to provide the full URL, so *the leading `/` is required*.
+Note: you need to provide the full URL, so *the leading `/` is required*.
 
 ## Online status
 
