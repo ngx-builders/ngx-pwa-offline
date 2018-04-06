@@ -1,6 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { LibModule } from 'angular-offline';
+import { LibModule } from 'ngx-pwa-offline';
 
 import { AppComponent }  from './app.component';
 

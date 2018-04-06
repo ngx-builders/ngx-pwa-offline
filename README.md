@@ -28,13 +28,13 @@ Angular 5 and RxJS >= 5.5 are required.
 **Install with npm** or another package manager:
 
 ```bash
-npm install angular-offline
+npm install ngx-pwa-offline
 ```
 
 Then **import the `OfflineModule` module in your app root module** (just once, do *NOT* re-import it in your submodules).
 
 ```typescript
-import { OfflineModule } from 'angular-offline';
+import { OfflineModule } from 'ngx-pwa-offline';
 
 @NgModule({
   imports: [
@@ -50,7 +50,7 @@ export class AppModule {}
 Then you just have to **inject the `Offline` service *just once* in `AppComponent`** :
 
 ```typescript
-import { Offline } from 'angular-offline';
+import { Offline } from 'ngx-pwa-offline';
 
 @Component()
 export class AppComponent {
@@ -60,7 +60,7 @@ export class AppComponent {
 }
 ```
 
-You won't use the service itself, but this step is required to setup the service. If you have an idea to avoid this step, feel free to contribute in [the related issue](https://github.com/cyrilletuzi/angular-offline/issues/1).
+You won't use the service itself, but this step is required to setup the service. If you have an idea to avoid this step, feel free to contribute in [the related issue](https://github.com/cyrilletuzi/ngx-pwa-offline/issues/1).
 
 ## Catching offline errors
 
@@ -69,7 +69,7 @@ You won't use the service itself, but this step is required to setup the service
 Just **use the `catchOffline` RxJS operator**:
 
 ```typescript
-import { catchOffline } from 'angular-offline';
+import { catchOffline } from 'ngx-pwa-offline';
 
 @Component({
   selector: 'some-page',
@@ -117,7 +117,7 @@ You need to provide the full URL, so *the leading `/` is required*.
 Guards catching offline errors are also available, for `CanActivate`, `CanActivateChild` and `CanLoad`. For example:
 
 ```typescript
-import { OfflineGuard } from 'angular-offline';
+import { OfflineGuard } from 'ngx-pwa-offline';
 
 const routes: Routes = [
   { path: 'some-page', component: SomePageComponent, canActivate: [OfflineGuard] }
@@ -146,7 +146,7 @@ This module supports [Universal server-side rendering](https://github.com/angula
 
 ## Changelog
 
-[Changelog available here](https://github.com/cyrilletuzi/angular-offline/blob/master/CHANGELOG.md).
+[Changelog available here](https://github.com/cyrilletuzi/ngx-pwa-offline/blob/master/CHANGELOG.md).
 
 ## License
 

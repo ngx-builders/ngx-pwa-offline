@@ -6,7 +6,7 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "paths": {
-      "angular-offline": [
+      "ngx-pwa-offline": [
         "../lib"
       ]
     }

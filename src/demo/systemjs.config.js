@@ -43,7 +43,7 @@
         defaultExtension: 'js',
         main: 'index'
       },
-      'angular-offline': {
+      'ngx-pwa-offline': {
         main: 'index.js',
         defaultExtension: 'js',
         meta: {

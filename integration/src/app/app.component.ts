@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LibService } from 'angular-offline';
+import { LibService } from 'ngx-pwa-offline';
 
 @Component({
   selector: 'integration-app',
