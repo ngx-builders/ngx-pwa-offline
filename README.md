@@ -2,6 +2,8 @@
 
 RxJS operator and other utils catching offline errors in Angular apps and PWA.
 
+You could also be interested by [@ngx-pwa/local-storage](https://github.com/cyrilletuzi/angular-async-local-storage).
+
 ## Angular onsite training
 
 The author of this library organizes Angular courses (based in Paris, France, but open to travel). You can find [my bio here](https://www.cyrilletuzi.com/en/web/) (in English) and [course details here](https://formationjavascript.com/formation-angular/) (in French).
