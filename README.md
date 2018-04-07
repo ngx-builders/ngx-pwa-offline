@@ -49,15 +49,15 @@ import { OfflineModule } from '@ngx-pwa/offline';
 export class AppModule {}
 ```
 
-Then you just have to **inject the `Offline` service *at least once***, for example in `AppComponent`:
+Then you just have to **inject the `Network` service *at least once***, for example in `AppComponent`:
 
 ```typescript
-import { Offline } from '@ngx-pwa/offline';
+import { Network } from '@ngx-pwa/offline';
 
 @Component()
 export class AppComponent {
 
-  constructor(protected offline: Offline) {}
+  constructor(protected network: Network) {}
 
 }
 ```
@@ -125,19 +125,19 @@ Note: you need to provide the full URL, so *the leading `/` is required*.
 To check online status at some point:
 
 ```typescript
-import { Offline } from '@ngx-pwa/offline';
+import { Network } from '@ngx-pwa/offline';
 
 @Component({
   template: `
-    <online-component *ngIf="isOnline"></online-component>
-    <offline-component *ngIf="!isOnline"></offline-component>
+    <online-component *ngIf="online"></online-component>
+    <offline-component *ngIf="!online"></offline-component>
   `
 })
 export class SomePageComponent implements OnInit {
 
-  isOnline = this.offline.isOnline;
+  online = this.network.online;
 
-  constructor(protected offline: Offline) {}
+  constructor(protected network: Network) {}
 
 }
 ```
@@ -147,21 +147,21 @@ export class SomePageComponent implements OnInit {
 To observe when online status changes:
 
 ```typescript
-import { Offline } from '@ngx-pwa/offline';
+import { Network } from '@ngx-pwa/offline';
 
 @Component({
   template: `
-    <online-component *ngIf="isOnline$ | async; else isOffline"></online-component>
-    <ng-template #isOffline>
+    <online-component *ngIf="online$ | async; else offline"></online-component>
+    <ng-template #offline>
       <offline-component></offline-component>
     </ng-template>
   `
 })
 export class SomePageComponent implements OnInit {
 
-  isOnline$ = this.offline.connectionChanges;
+  online$ = this.network.onlineChanges;
 
-  constructor(protected offline: Offline) {}
+  constructor(protected network: Network) {}
 
 }
 ```
@@ -175,10 +175,10 @@ Notes:
 Guards catching offline errors are also available, for `CanActivate`, `CanActivateChild` and `CanLoad`. For example:
 
 ```typescript
-import { Offline } from '@ngx-pwa/offline';
+import { OnlineGuard } from '@ngx-pwa/offline';
 
 const routes: Routes = [
-  { path: 'some-page', component: SomePageComponent, canActivate: [Offline] }
+  { path: 'some-page', component: SomePageComponent, canActivate: [OnlineGuard] }
 ];
 ```
 

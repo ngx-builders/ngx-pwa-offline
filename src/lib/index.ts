@@ -1,3 +1,4 @@
 export { OfflineConfig } from './src/offline-config';
-export { Offline, catchOffline } from './src/offline.service';
+export { Network, catchOffline } from './src/network.service';
+export { OnlineGuard } from './src/online.guard';
 export { OfflineModule } from './src/offline.module';
