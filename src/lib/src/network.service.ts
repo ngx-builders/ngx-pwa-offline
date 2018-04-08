@@ -14,12 +14,16 @@ import { OFFLINE_CONFIG_ROUTE_OFFLINE, OFFLINE_CONFIG_ROUTE_UNAVAILABLE } from '
 export class Network {
 
   static instance: Network | null = null;
+
+  /** Observable to listen when Internet connection availability changes */
   onlineChanges: Observable<boolean>;
 
+  /** Check if Internet connection is available */
   get online(): boolean {
     return isPlatformBrowser(this.platformId) ? navigator.onLine : true;
   }
 
+  /** Do not use this method, use `catchOffline` function directly */
   static catch<T>() {
 
     return catchError<T, T>(Network.catchCallback);
@@ -31,7 +35,7 @@ export class Network {
     if (!Network.instance) {
 
       console.log(`You need to import OfflineModule in your AppModule
-      AND to inject the Connection service in your AppComponent constructor.`);
+      AND to inject the Network service at least once, for example in your AppComponent constructor.`);
 
       throw error;
 
@@ -92,4 +96,8 @@ export class Network {
 
 }
 
+/**
+ * Catch offline errors (no Internet connection) and server errors (HTTP status 5xx)
+ * and redirect to /offline or /unavailable page (routes can be changed in the OfflineModule)
+ */
 export const catchOffline = Network.catch;
