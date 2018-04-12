@@ -7,7 +7,7 @@ import { catchError, filter, mapTo, startWith } from 'rxjs/operators';
 import { OFFLINE_CONFIG_DEFAULT } from './offline-config';
 import { OFFLINE_CONFIG_ROUTE_OFFLINE, OFFLINE_CONFIG_ROUTE_UNAVAILABLE } from './tokens';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class Network {
 
   static instance: Network | null = null;
