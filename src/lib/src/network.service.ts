@@ -1,8 +1,8 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-import { Observable, fromEvent, of, merge, OperatorFunction } from 'rxjs';
-import { catchError, filter, mapTo, startWith } from 'rxjs/operators';
+import { Observable, fromEvent, of, merge, empty, OperatorFunction } from 'rxjs';
+import { catchError, mapTo, startWith } from 'rxjs/operators';
 
 import { OFFLINE_CONFIG_DEFAULT } from './offline-config';
 import { OFFLINE_CONFIG_ROUTE_OFFLINE, OFFLINE_CONFIG_ROUTE_UNAVAILABLE } from './tokens';
@@ -38,19 +38,17 @@ export class Network {
 
     } else {
 
-      const cancel = caught.pipe(filter(() => false));
-
       if (!Network.instance.online) {
 
         Network.instance.router.navigate([Network.instance.routeOffline]);
 
-        return cancel;
+        return empty();
 
       } else if (error.status && (error.status >= 500 && error.status < 600)) {
 
         Network.instance.router.navigate([Network.instance.routeUnavailable]);
 
-        return cancel;
+        return empty();
 
       } else {
 
