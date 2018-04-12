@@ -60,7 +60,7 @@ return Promise.resolve()
         '@angular/core': 'ng.core',
         '@angular/common': 'ng.common',
         '@angular/router': 'ng.router',
-        'rxjs/Observable': 'Rx',
+        'rxjs': 'Rx',
         'rxjs/operators': 'Rx.operators',
       },
       external: [
@@ -69,7 +69,7 @@ return Promise.resolve()
         '@angular/core',
         '@angular/common',
         '@angular/router',
-        'rxjs/Observable',
+        'rxjs',
         'rxjs/operators',
       ],
       plugins: [
