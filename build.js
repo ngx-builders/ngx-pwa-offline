@@ -65,6 +65,7 @@ return Promise.resolve()
         'rxjs/observable/fromEvent': 'Rx.Observable',
         'rxjs/observable/of': 'Rx.Observable',
         'rxjs/observable/merge': 'Rx.Observable',
+        'rxjs/observable/empty': 'Rx.Observable',
       },
       external: [
         // List of dependencies
@@ -77,6 +78,7 @@ return Promise.resolve()
         'rxjs/observable/fromEvent',
         'rxjs/observable/of',
         'rxjs/observable/merge',
+        'rxjs/observable/empty',
       ],
       plugins: [
         commonjs({

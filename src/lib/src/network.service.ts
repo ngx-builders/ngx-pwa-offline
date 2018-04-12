@@ -5,7 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 import { of } from 'rxjs/observable/of';
 import { merge } from 'rxjs/observable/merge';
-import { catchError, filter, mapTo, startWith } from 'rxjs/operators';
+import { empty } from 'rxjs/observable/empty';
+import { catchError, mapTo, startWith } from 'rxjs/operators';
 
 import { OFFLINE_CONFIG_DEFAULT } from './offline-config';
 import { OFFLINE_CONFIG_ROUTE_OFFLINE, OFFLINE_CONFIG_ROUTE_UNAVAILABLE } from './tokens';
@@ -41,19 +42,17 @@ export class Network {
 
     } else {
 
-      const cancel = caught.pipe(filter(() => false));
-
       if (!Network.instance.online) {
 
         Network.instance.router.navigate([Network.instance.routeOffline]);
 
-        return cancel;
+        return empty();
 
       } else if (error.status && (error.status >= 500 && error.status < 600)) {
 
         Network.instance.router.navigate([Network.instance.routeUnavailable]);
 
-        return cancel;
+        return empty();
 
       } else {
 
