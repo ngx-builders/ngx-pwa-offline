@@ -1,10 +1,7 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { of } from 'rxjs/observable/of';
-import { merge } from 'rxjs/observable/merge';
+import { Observable, fromEvent, of, merge, OperatorFunction } from 'rxjs';
 import { catchError, filter, mapTo, startWith } from 'rxjs/operators';
 
 import { OFFLINE_CONFIG_DEFAULT } from './offline-config';
