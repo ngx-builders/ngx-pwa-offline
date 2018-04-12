@@ -62,9 +62,6 @@ return Promise.resolve()
         '@angular/router': 'ng.router',
         'rxjs/Observable': 'Rx',
         'rxjs/operators': 'Rx.operators',
-        'rxjs/observable/fromEvent': 'Rx.Observable',
-        'rxjs/observable/of': 'Rx.Observable',
-        'rxjs/observable/merge': 'Rx.Observable',
       },
       external: [
         // List of dependencies
@@ -74,9 +71,6 @@ return Promise.resolve()
         '@angular/router',
         'rxjs/Observable',
         'rxjs/operators',
-        'rxjs/observable/fromEvent',
-        'rxjs/observable/of',
-        'rxjs/observable/merge',
       ],
       plugins: [
         commonjs({
