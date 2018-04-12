@@ -21,7 +21,7 @@ export class Network {
   }
 
   /** Do not use this method, use `catchOffline` function directly */
-  static catch<T>() {
+  static catchOffline<T>() {
 
     return catchError<T, T>(Network.catchCallback);
 
@@ -97,4 +97,4 @@ export class Network {
  * Catch offline errors (no Internet connection) and server errors (HTTP status 5xx)
  * and redirect to /offline or /unavailable page (routes can be changed in the OfflineModule)
  */
-export const catchOffline = Network.catch;
+export const catchOffline = Network.catchOffline;
