@@ -25,15 +25,19 @@ There are also other tools for offline management, like online status helpers an
 
 ## Getting started
 
-Angular 5 and RxJS >= 5.5 are required.
+Angular >= 5 and RxJS >= 5.5 are required.
 
 **Install with npm** or another package manager:
 
 ```bash
+# For Angular 5:
 npm install @ngx-pwa/offline
+# For Angular 6:
+npm install @ngx-pwa/offline@next
 ```
 
 Then **import the `OfflineModule` module in your app root module** (just once, do *NOT* re-import it in your submodules).
+Since *version 6*, if you don't need custom configuration, this step is no longer required.
 
 ```typescript
 import { OfflineModule } from '@ngx-pwa/offline';
@@ -194,7 +198,7 @@ export class AppModule {}
 
 ## Angular support
 
-This lib major version is aligned to the major version of Angular. Meaning for Angular 5 you need version 5, and so on.
+This lib major version is aligned to the major version of Angular. Meaning for Angular 5 you need version 5, for Angular 6 you need version 6, and so on.
 
 As RxJS >= 5.5 is required, which is the minimum dependency since Angular 5 only, the lib don't support Angular 4 and below.
 
