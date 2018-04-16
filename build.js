@@ -99,14 +99,14 @@ return Promise.resolve()
     // ESM+ES5 flat module bundle.
     const fesm5config = Object.assign({}, rollupBaseConfig, {
       entry: es5Entry,
-      dest: path.join(distFolder, 'esm5', `${libName}.js`),
+      dest: path.join(distFolder, 'fesm5', `${libName}.js`),
       format: 'es'
     });
 
     // ESM+ES2015 flat module bundle.
     const fesm2015config = Object.assign({}, rollupBaseConfig, {
       entry: es2015Entry,
-      dest: path.join(distFolder, 'esm2015', `${libName}.js`),
+      dest: path.join(distFolder, 'fesm2015', `${libName}.js`),
       format: 'es'
     });
 
