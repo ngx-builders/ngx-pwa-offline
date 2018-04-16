@@ -6,6 +6,7 @@
   "module": "./esm5/offline.js",
   "es2015": "./esm2015/offline.js",
   "typings": "./offline.d.ts",
+  "sideEffects": false,
   "author": "Cyrille Tuzi",
   "license": "MIT",
   "keywords": [
