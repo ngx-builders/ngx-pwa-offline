@@ -4,8 +4,7 @@ import { Router } from '@angular/router';
 import { Observable, fromEvent, of, merge, empty, OperatorFunction } from 'rxjs';
 import { catchError, mapTo, startWith } from 'rxjs/operators';
 
-import { OFFLINE_CONFIG_DEFAULT } from './offline-config';
-import { OFFLINE_CONFIG_ROUTE_OFFLINE, OFFLINE_CONFIG_ROUTE_UNAVAILABLE } from './tokens';
+import { OFFLINE_ROUTE_OFFLINE, OFFLINE_ROUTE_UNAVAILABLE } from './tokens';
 
 @Injectable({ providedIn: 'root' })
 export class Network {
@@ -63,8 +62,8 @@ export class Network {
   constructor(
     protected router: Router,
     @Inject(PLATFORM_ID) protected platformId: string,
-    @Inject(OFFLINE_CONFIG_ROUTE_OFFLINE) protected routeOffline = OFFLINE_CONFIG_DEFAULT.routeOffline,
-    @Inject(OFFLINE_CONFIG_ROUTE_UNAVAILABLE) protected routeUnavailable = OFFLINE_CONFIG_DEFAULT.routeUnavailable,
+    @Inject(OFFLINE_ROUTE_OFFLINE) protected routeOffline: string,
+    @Inject(OFFLINE_ROUTE_UNAVAILABLE) protected routeUnavailable: string,
   ) {
 
     /* Store instance in a static property to allow access to injected services in the RxJS static operator

@@ -36,8 +36,8 @@ npm install @ngx-pwa/offline
 npm install @ngx-pwa/offline@next
 ```
 
-Then **import the `OfflineModule` module in your app root module** (just once, do *NOT* re-import it in your submodules).
-Since *version 6*, if you don't need custom configuration, this step is no longer required.
+Then, ***only in version 5*, import the `OfflineModule` module in your app root module** (just once, do *NOT* re-import it in your submodules).
+Since *version 6*, this step is no longer required and `OfflineModule` is removed.
 
 ```typescript
 import { OfflineModule } from '@ngx-pwa/offline';
@@ -109,12 +109,14 @@ By default, `catchOffline` will redirect to:
 Note: creating the corresponding routes and components in your app is up to you,
 as the lib can't decide the content and design of these pages for you.
 
-If you want to change the redirection URLs, just configure the module:
+If you want to change the redirection URLs:
 
 ```typescript
+import { offlineProviders } from '@ngx-pwa/offline';
+
 @NgModule({
-  imports: [
-    OfflineModule.forRoot({ routeOffline: '/oops/offline', routeUnavailable: '/oops/unavailable' })
+  providers: [
+    offlineProviders({ routeOffline: '/oops/offline', routeUnavailable: '/oops/unavailable' })
   ]
 })
 export class AppModule {}
@@ -186,11 +188,13 @@ const routes: Routes = [
 ];
 ```
 
-By default, guards will redirect to the `/offline` page. If you just want to block the navigation, you can configure the module:
+By default, guards will redirect to the `/offline` page. If you just want to block the navigation:
 ```typescript
+import { offlineProviders } from '@ngx-pwa/offline';
+
 @NgModule({
   imports: [
-    OfflineModule.forRoot({ guardsRedirect: false })
+    offlineProviders({ guardsRedirect: false })
   ]
 })
 export class AppModule {}
