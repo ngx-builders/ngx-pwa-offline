@@ -193,7 +193,7 @@ By default, guards will redirect to the `/offline` page. If you just want to blo
 import { offlineProviders } from '@ngx-pwa/offline';
 
 @NgModule({
-  imports: [
+  providers: [
     offlineProviders({ guardsRedirect: false })
   ]
 })
