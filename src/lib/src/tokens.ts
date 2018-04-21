@@ -28,9 +28,9 @@ export interface OfflineProvidersConfig {
 export function offlineProviders(config: OfflineProvidersConfig): Provider[] {
 
   return [
-    'routeOffline' in config ? { provide: OFFLINE_ROUTE_OFFLINE, useValue: config.routeOffline }  : [],
-    'routeUnavailable' in config ? { provide: OFFLINE_ROUTE_UNAVAILABLE, useValue: config.routeUnavailable } : [],
-    'guardsRedirect' in config ? { provide: OFFLINE_GUARDS_REDIRECT, useValue: config.guardsRedirect } : [],
+    config.routeOffline ? { provide: OFFLINE_ROUTE_OFFLINE, useValue: config.routeOffline }  : [],
+    config.routeUnavailable ? { provide: OFFLINE_ROUTE_UNAVAILABLE, useValue: config.routeUnavailable } : [],
+    !config.guardsRedirect ? { provide: OFFLINE_GUARDS_REDIRECT, useValue: config.guardsRedirect } : [],
   ];
 
 }
