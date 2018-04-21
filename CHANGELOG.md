@@ -1,6 +1,6 @@
 # Changelog
 
-## 6.0.0-beta.7 (2018-04-21)
+## 6.0.0-beta.8 (2018-04-21)
 
 Same as v5.0.0-beta.10, plus:
 
