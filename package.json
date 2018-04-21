@@ -1,6 +1,6 @@
 {
   "name": "@ngx-pwa/offline",
-  "version": "5.0.0-beta.9",
+  "version": "5.0.0-beta.10",
   "description": "RxJS operator and other utils catching offline errors in Angular apps and PWA",
   "main": "./bundles/offline.umd.js",
   "module": "./esm5/offline.js",
