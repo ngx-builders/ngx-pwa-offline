@@ -1,8 +1,17 @@
 import { InjectionToken, Provider } from '@angular/core';
 
-export const OFFLINE_ROUTE_OFFLINE = new InjectionToken<string>('offline-config-route-offline');
-export const OFFLINE_ROUTE_UNAVAILABLE = new InjectionToken<string>('offline-config-route-unavailable');
-export const OFFLINE_GUARDS_REDIRECT = new InjectionToken<boolean>('offline-config-guards-redirect');
+export const OFFLINE_ROUTE_OFFLINE = new InjectionToken<string>('offline-config-route-offline', {
+  providedIn: 'root',
+  factory: () => '/offline'
+ });
+export const OFFLINE_ROUTE_UNAVAILABLE = new InjectionToken<string>('offline-config-route-unavailable', {
+  providedIn: 'root',
+  factory: () => '/unavailable'
+ });
+export const OFFLINE_GUARDS_REDIRECT = new InjectionToken<boolean>('offline-config-guards-redirect', {
+  providedIn: 'root',
+  factory: () => true
+ });
 
 export interface OfflineProvidersConfig {
   /** Full URL of the page to redirect to when Internet connection is unavailable (default: '/offline') */

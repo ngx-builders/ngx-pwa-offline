@@ -1,16 +1,12 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { of } from 'rxjs/observable/of';
-import { merge } from 'rxjs/observable/merge';
-import { empty } from 'rxjs/observable/empty';
+import { Observable, fromEvent, of, merge, empty, OperatorFunction } from 'rxjs';
 import { catchError, mapTo, startWith } from 'rxjs/operators';
 
 import { OFFLINE_ROUTE_OFFLINE, OFFLINE_ROUTE_UNAVAILABLE } from './tokens';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class Network {
 
   static instance: Network | null = null;
