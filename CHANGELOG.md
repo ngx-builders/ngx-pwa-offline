@@ -1,20 +1,9 @@
 # Changelog
 
-## 6.0.0-beta.8 (2018-04-21)
+## 6.0.0-rc.0 (2018-05-04)
 
-Same as v5.0.0-beta.10, plus:
-
-### Breaking change
-
-- `OfflineModule` no longer required and so removed (delete the import in your `AppModule`).
-
-- Distribution files and directories of non-UMD packages have changed from official [Angular Package Format v5](https://docs.google.com/document/d/1tdgcvdLKsYPHlgNBppGFrsaA1eINLxJi9C8KkyrH2sI) to [APF v6](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs). It should not affect your code, as building tools like webpack know where to find the new packages.
-
-## 5.0.0-beta.10 (2018-04-21)
-
-- New config system: `offlineProviders` instead of `OfflineModule.forRoot()`, to be consistent with changes in v6. See README.
-
-## 5.0.0-beta.7 (2018-04-12)
+Note: we are confident with this release to be used with Angular 6 final. But as we may switch to the new official CLI library generation, we're staying in Release Candidate until then to avoid any unexpected breaking change.
+Additionally, tests must be added before a final release.
 
 ### Features
 
@@ -22,3 +11,9 @@ Same as v5.0.0-beta.10, plus:
 - `OnlineGuard` for `canActivate`, `canActivateChild` and `canLoad`
 - `online` to check online status with `Network` service
 - `onlineChanges` to observe when online status changes with `Network` service
+
+## 5.0.0-beta.10 (2018-04-21)
+
+As Angular 6 is now released, we'll drop the developement of the v5 branch. But the lib should still work in Angular 5 by doing:
+- `npm install @ngx-pwa/offline@5`
+- import `OfflineModule` in your `AppModule`
