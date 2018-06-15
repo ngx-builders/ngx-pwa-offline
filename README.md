@@ -171,7 +171,8 @@ const routes: Routes = [
 ];
 ```
 
-By default, guards will redirect to the `/offline` page. If you just want to block the navigation:
+By default, guards will redirect to the `/offline` page (so your app must use Angular router: `RouterModule.forRoot()`).
+If you just want to block the navigation:
 ```typescript
 import { offlineProviders } from '@ngx-pwa/offline';
 
