@@ -80,6 +80,8 @@ export class SomePageComponent implements OnInit {
 }
 ```
 
+As it may cause a redirection, your app must use Angular router (`RouterModule.forRoot()`).
+
 ### Redirecting
 
 By default, `catchOffline` will redirect to:
