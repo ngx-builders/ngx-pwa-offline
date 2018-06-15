@@ -1,9 +1,15 @@
 # Changelog
 
-## 6.0.0-rc.0 (2018-05-04)
+## 6.0.0-rc.1 (2018-06-15)
 
 Note: we are confident with this release to be used with Angular 6 final. But as we may switch to the new official CLI library generation, we're staying in Release Candidate until then to avoid any unexpected breaking change.
 Additionally, tests must be added before a final release.
+
+### Bug fix
+
+- `onlineChanges` now works (fixes [#3](https://github.com/cyrilletuzi/ngx-pwa-offline/issues/3))
+
+## 6.0.0-rc.0 (2018-05-04)
 
 ### Features
 
