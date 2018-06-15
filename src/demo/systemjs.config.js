@@ -37,6 +37,7 @@
         }
       },
       rxjs: {
+        main: 'index',
         defaultExtension: 'js'
       },
       'rxjs/operators': {

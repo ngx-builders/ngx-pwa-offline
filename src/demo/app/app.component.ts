@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { Offline } from '@ngx-pwa/offline';
+import { Network } from '@ngx-pwa/offline';
 
 @Component({
   selector: 'demo-app',
-  templateUrl: './app.component.html'
+  template: `test`
 })
 export class AppComponent {
-  meaning: number;
-  constructor(offline: Offline) {
+  constructor(protected network: Network) {
+
+    this.network.onlineChanges.subscribe((online) => {
+      console.log(online);
+    });
+
   }
 }
