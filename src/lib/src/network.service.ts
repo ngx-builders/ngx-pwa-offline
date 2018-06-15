@@ -1,4 +1,4 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID, Optional } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { Observable, fromEvent, of, merge, empty, OperatorFunction } from 'rxjs';
@@ -35,6 +35,12 @@ export class Network {
 
       throw error;
 
+    } else if (!Network.instance.router) {
+
+      console.log(`You need to import RouterModule.forRoot([]) in your application.`);
+
+      throw error;
+
     } else {
 
       if (!Network.instance.online) {
@@ -60,7 +66,7 @@ export class Network {
   }
 
   constructor(
-    protected router: Router,
+    @Optional() protected router: Router,
     @Inject(PLATFORM_ID) protected platformId: string,
     @Inject(OFFLINE_ROUTE_OFFLINE) protected routeOffline: string,
     @Inject(OFFLINE_ROUTE_UNAVAILABLE) protected routeUnavailable: string,
@@ -81,10 +87,10 @@ export class Network {
   protected initOnlineObservable() {
 
     this.onlineChanges = !isPlatformBrowser(this.platformId) ? of(true) : merge(
-      startWith(this.online),
-      fromEvent(document, 'online').pipe(mapTo(true)),
-      fromEvent(document, 'offline').pipe(mapTo(false)),
-    );
+      fromEvent(window, 'online').pipe(mapTo(true)),
+      fromEvent(window, 'offline').pipe(mapTo(false)),
+    )
+    .pipe(startWith(this.online));
 
   }
 
