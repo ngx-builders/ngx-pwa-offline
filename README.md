@@ -189,7 +189,7 @@ export class AppModule {}
 This lib major version is aligned to the major version of Angular. Meaning for Angular 6 you need version 6, and so on.
 
 Angular 5 branch is now dropped, but you can still use it by doing:
-- `npm install @ngx-pwa/offline@5`
+- `npm install @ngx-pwa/offline@5.0.0-beta.10`
 - import `OfflineModule` in your `AppModule`
 
 As RxJS >= 5.5 is required, which is the minimum dependency since Angular 5 only, the lib doesn't support Angular 4 and below.

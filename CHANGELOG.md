@@ -21,5 +21,5 @@ Additionally, tests must be added before a final release.
 ## 5.0.0-beta.10 (2018-04-21)
 
 As Angular 6 is now released, we'll drop the developement of the v5 branch. But the lib should still work in Angular 5 by doing:
-- `npm install @ngx-pwa/offline@5`
+- `npm install @ngx-pwa/offline@5.0.0-beta.10`
 - import `OfflineModule` in your `AppModule`
