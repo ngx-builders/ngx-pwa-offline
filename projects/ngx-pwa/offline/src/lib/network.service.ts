@@ -20,13 +20,13 @@ export class Network {
   }
 
   /** Do not use this method, use `catchOffline` function directly */
-  static catchOffline<T>() {
+  static catchOffline<T>(): OperatorFunction<T, T> {
 
     return catchError<T, T>(Network.catchCallback);
 
   }
 
-  protected static catchCallback<T>(error: any, caught: Observable<T>): Observable<T> {
+  protected static catchCallback<T>(error: any): Observable<T> {
 
     if (!Network.instance) {
 
@@ -79,12 +79,6 @@ export class Network {
       Network.instance = this;
 
     }
-
-    this.initOnlineObservable();
-
-  }
-
-  protected initOnlineObservable() {
 
     this.onlineChanges = !isPlatformBrowser(this.platformId) ? of(true) : merge(
       fromEvent(window, 'online').pipe(mapTo(true)),
