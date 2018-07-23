@@ -1,9 +1,19 @@
 # Changelog
 
-## 6.0.0-rc.1 (2018-06-15)
+## 6.0.0-rc.2 (2018-07-23)
 
-Note: we are confident with this release to be used with Angular 6 final. But as we may switch to the new official CLI library generation, we're staying in Release Candidate until then to avoid any unexpected breaking change.
-Additionally, tests must be added before a final release.
+### Feature
+
+- Full support of official [Angular Package Format v6](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit)
+
+### Breaking change
+
+- Distribution files and directories have been changed to match
+official [Angular Package Format v6](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit).
+It affects your code only if you were manually loading UMD bundles,
+otherwise building tools like Angular CLI / webpack know where to find the files.
+
+## 6.0.0-rc.1 (2018-06-15)
 
 ### Bug fix
 
