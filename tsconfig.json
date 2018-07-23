@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@ngx-pwa/offline": [
+        "dist/ngx-pwa/offline"
+      ],
+      "@ngx-pwa/offline/*": [
+        "dist/ngx-pwa/offline/*"
+      ]
+    }
   }
 }
