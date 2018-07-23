@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ng build @ngx-pwa/offline --prod && copyfiles README.md LICENSE dist/ngx-pwa/offline",
+    "test": "ng test @ngx-pwa/offline",
+    "testAll": "ng test @ngx-pwa/offline --watch false && ng test offline --watch false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "publish": "npm run lint && npm run testAll && npm run build && npm publish dist/ngx-pwa/offline --access public"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +35,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "copyfiles": "^2.0.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
