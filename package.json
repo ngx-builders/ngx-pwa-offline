@@ -8,7 +8,7 @@
     "test": "ng test @ngx-pwa/offline",
     "testAll": "ng test @ngx-pwa/offline --watch false",
     "lint": "ng lint",
-    "publish": "npm run lint && npm run testAll && npm run build && npm publish dist/ngx-pwa/offline --access public"
+    "publish": "npm run lint && npm run build && npm publish dist/ngx-pwa/offline --access public"
   },
   "private": true,
   "dependencies": {
