@@ -30,8 +30,7 @@ export class Network {
 
     if (!Network.instance) {
 
-      console.log(`You need to import OfflineModule in your AppModule
-      AND to inject the Network service at least once, for example in your AppComponent constructor.`);
+      console.log(`You need to inject the Network service at least once, for example in your AppComponent constructor.`);
 
       throw error;
 
@@ -92,6 +91,6 @@ export class Network {
 
 /**
  * Catch offline errors (no Internet connection) and server errors (HTTP status 5xx)
- * and redirect to /offline or /unavailable page (routes can be changed in the OfflineModule)
+ * and redirect to /offline or /unavailable page (routes can be changed via offlineProviders())
  */
 export const catchOffline = Network.catchOffline;

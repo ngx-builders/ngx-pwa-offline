@@ -7,7 +7,7 @@ import { Network } from './network.service';
 /**
  * Check if Internet connection is available to allow a navigation to a route or not.
  * By default, if Internet connection is not available, the user will be redirected to the /offline page.
- * This behavior and the URL of redirection can be configured in the OfflineModule.
+ * This behavior and the URL of redirection can be configured via offlineProviders().
  */
 @Injectable({ providedIn: 'root' })
 export class OnlineGuard implements CanActivate, CanActivateChild, CanLoad {
