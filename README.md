@@ -30,7 +30,6 @@ Angular 6 and RxJS 6 are required.
 **Install with npm** or another package manager:
 
 ```bash
-# For Angular 6:
 npm install @ngx-pwa/offline
 ```
 
@@ -48,7 +47,6 @@ export class AppComponent {
 ```
 
 Note: you may not use the service itself and just the RxJS operator, but an injection is required in all cases to setup the service.
-If you have an idea to avoid this step, feel free to contribute in [the related issue](https://github.com/cyrilletuzi/ngx-pwa-offline/issues/1).
 
 ## Catching offline errors
 

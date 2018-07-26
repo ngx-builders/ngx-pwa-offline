@@ -1,5 +1,14 @@
 # Changelog
 
+## 6.0.0 (2018-07-26)
+
+### Features
+
+- `catchOffline` RxJS operator
+- `OnlineGuard` for `canActivate`, `canActivateChild` and `canLoad`
+- `online` to check online status with `Network` service
+- `onlineChanges` to observe when online status changes with `Network` service
+
 ## 6.0.0-rc.2 (2018-07-23)
 
 ### Feature
@@ -12,21 +21,6 @@
 official [Angular Package Format v6](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit).
 It affects your code only if you were manually loading UMD bundles,
 otherwise building tools like Angular CLI / webpack know where to find the files.
-
-## 6.0.0-rc.1 (2018-06-15)
-
-### Bug fix
-
-- `onlineChanges` now works (fixes [#3](https://github.com/cyrilletuzi/ngx-pwa-offline/issues/3))
-
-## 6.0.0-rc.0 (2018-05-04)
-
-### Features
-
-- `catchOffline` RxJS operator
-- `OnlineGuard` for `canActivate`, `canActivateChild` and `canLoad`
-- `online` to check online status with `Network` service
-- `onlineChanges` to observe when online status changes with `Network` service
 
 ## 5.0.0-beta.10 (2018-04-21)
 
