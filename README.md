@@ -8,7 +8,7 @@ RxJS operator and other utils catching offline errors in Angular apps and PWA.
 - [@ngx-pwa/local-storage](https://github.com/cyrilletuzi/angular-async-local-storage): 1st Angular library for local storage
 - Popular [Angular posts on Medium](https://medium.com/@cyrilletuzi)
 - Follow updates of this lib on [Twitter](https://twitter.com/cyrilletuzi)
-- **[Angular onsite tranings](https://formationjavascript.com/formation-angular/)** (based in Paris, so the website is in French, but [my bio in English is here](https://www.cyrilletuzi.com/en/web/) and I'm open to travail)
+- **[Angular onsite tranings](https://formationjavascript.com/formation-angular/)** (based in Paris, so the website is in French, but [my bio in English is here](https://www.cyrilletuzi.com/en/web/) and I'm open to travel)
 
 ## Why this lib?
 
