@@ -27,7 +27,7 @@ There are also other tools for offline management, like online status helpers an
 
 ## Getting started
 
-Angular 6 and RxJS 6 are required.
+Angular >=6 and RxJS 6 are required.
 
 **Install with npm** or another package manager:
 
@@ -186,7 +186,7 @@ export class AppModule {}
 
 ## Angular support
 
-This lib major version is aligned to the major version of Angular. Meaning for Angular 6 you need version 6, and so on.
+This lib supports Angular >= 6.
 
 The lib doesn't support Angular 5 and below.
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.1.0 (2018-10-19)
+
+### Feature
+
+- Allow Angular 7 in `peerDependencies`
+
 ## 6.0.0 (2018-07-26)
 
 ### Features
