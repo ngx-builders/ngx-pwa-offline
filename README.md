@@ -157,7 +157,10 @@ export class SomePageComponent implements OnInit {
 
 Notes:
 - as usual in Angular, do *not* use the `async` pipe twice on the same `Observable`. The example above shows you how to manage those situations in the proper way,
-- this `Observable` does *not* auto-complete. Then you should either use the `async` pipe as above for automatic unsubscription, either you should unsubscribe manually (in `ngOnDestroy` method in most cases).
+- this `Observable` does *not* auto-complete. Then you should either use the `async` pipe as above for automatic unsubscription, either you should unsubscribe manually (in `ngOnDestroy` method in most cases),
+- be aware the online status is provided by the browser and it is not always reliable: for example,
+if your computer is connected to a network but with no Internet access,
+the browser will still says it's online.
 
 ## Guards
 
