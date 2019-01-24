@@ -54,7 +54,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-pwa-offline:build"
+            "browserTarget": "ngx-pwa-offline:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
