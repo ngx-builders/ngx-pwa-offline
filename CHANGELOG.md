@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.2.0 (2019-05-29)
+
+### Feature
+
+- Allow Angular 8 in `peerDependencies`
+
 ## 6.1.0 (2018-10-19)
 
 ### Feature
