@@ -1,5 +1,19 @@
 # Changelog
 
+## 9.0.0-next.0 (2019-10-23)
+
+To test: `npm install @ngx-pwa/offline@next`
+
+**As a reminder, beta versions are for testing purposes only. Do *NOT* use in production.**
+
+### Feature
+
+- Support for Angular 9
+
+### Bug fix
+
+- Typing issue related to RxJS
+
 ## 6.2.0 (2019-05-29)
 
 ### Feature
