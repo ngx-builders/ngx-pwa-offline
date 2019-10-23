@@ -1,7 +1,7 @@
 import { Injectable, Inject, PLATFORM_ID, Optional } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-import { Observable, fromEvent, of, merge, OperatorFunction, EMPTY } from 'rxjs';
+import { Observable, fromEvent, of, merge, OperatorFunction, EMPTY, ObservableInput } from 'rxjs';
 import { catchError, mapTo, startWith } from 'rxjs/operators';
 
 import { OFFLINE_ROUTE_OFFLINE, OFFLINE_ROUTE_UNAVAILABLE } from './tokens';
@@ -22,7 +22,7 @@ export class Network {
   /** Do not use this method, use `catchOffline` function directly */
   static catchOffline<T>(): OperatorFunction<T, T> {
 
-    return catchError<T, T>(Network.catchCallback);
+    return catchError<T, ObservableInput<T>>(Network.catchCallback);
 
   }
 

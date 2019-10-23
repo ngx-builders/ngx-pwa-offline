@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.http.get('/api/cinema/movies').pipe(catchOffline()).subscribe((data) => {
+    this.http.get<any[]>('/api/cinema/movies').pipe(catchOffline()).subscribe((data) => {
       this.movies = data;
     });
 
