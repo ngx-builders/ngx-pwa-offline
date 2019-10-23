@@ -28,12 +28,14 @@ There are also other tools for offline management, like online status helpers an
 
 ## Getting started
 
-Angular >=6 and RxJS 6 are required.
-
 **Install with npm** or another package manager:
 
 ```bash
-npm install @ngx-pwa/offline
+# Angular 9+
+npm install @ngx-pwa/offline@next
+
+# Angular 6 / 7 / 8
+npm install @ngx-pwa/offline@6
 ```
 
 Then you just have to **inject the `Network` service *at least once***, for example in `AppComponent`:
@@ -194,7 +196,7 @@ This lib supports Angular >= 6.
 
 The lib doesn't support Angular 5 and below.
 
-This module supports [AoT pre-compiling](https://angular.io/guide/aot-compiler).
+This module supports [AoT pre-compiling](https://angular.io/guide/aot-compiler) and Ivy.
 
 This module supports [Universal server-side rendering](https://github.com/angular/universal).
 
