@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-pwa-offline": {
+    "demo": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -107,7 +107,7 @@
         }
       }
     },
-    "ngx-pwa-offline-e2e": {
+    "demo-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngx-pwa-offline:serve"
+            "devServerTarget": "demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-pwa-offline:serve:production"
+              "devServerTarget": "demo:serve:production"
             }
           }
         },
@@ -134,7 +134,7 @@
         }
       }
     },
-    "@ngx-pwa/offline": {
+    "ngx-pwa-offline": {
       "root": "projects/ngx-pwa/offline",
       "sourceRoot": "projects/ngx-pwa/offline/src",
       "projectType": "library",
@@ -176,5 +176,5 @@
       }
     }
   },
-  "defaultProject": "ngx-pwa-offline"
+  "defaultProject": "demo"
 }
