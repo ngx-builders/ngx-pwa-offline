@@ -1,6 +1,6 @@
 {
   "name": "@ngx-pwa/offline",
-  "version": "9.0.0-next.0",
+  "version": "9.0.0-rc.0",
   "description": "RxJS operator and other utils catching offline errors in Angular apps and PWA",
   "author": "Cyrille Tuzi",
   "license": "MIT",

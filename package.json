@@ -1,6 +1,6 @@
 {
   "name": "@ngx-pwa/offline",
-  "version": "9.0.0-next.0",
+  "version": "9.0.0-rc.0",
   "scripts": {
     "ng": "ng",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",

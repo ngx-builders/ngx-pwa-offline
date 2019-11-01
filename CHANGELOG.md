@@ -1,10 +1,8 @@
 # Changelog
 
-## 9.0.0-next.0 (2019-10-23)
+## 9.0.0-rc.0 (2019-11-01)
 
-To test: `npm install @ngx-pwa/offline@next`
-
-**As a reminder, beta versions are for testing purposes only. Do *NOT* use in production.**
+To update: `npm install @ngx-pwa/offline@next`
 
 ### Feature
 
