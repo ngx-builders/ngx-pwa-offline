@@ -19,15 +19,15 @@ export class OnlineGuard implements CanActivate, CanActivateChild, CanLoad {
     @Inject(OFFLINE_GUARDS_REDIRECT) protected guardsRedirect: boolean,
   ) {}
 
-  canActivate() {
+  canActivate(): boolean {
     return this.guard();
   }
 
-  canActivateChild() {
+  canActivateChild(): boolean {
     return this.guard();
   }
 
-  canLoad() {
+  canLoad(): boolean {
     return this.guard();
   }
 

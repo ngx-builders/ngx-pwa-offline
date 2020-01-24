@@ -13,7 +13,7 @@ export class UnavailableComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
