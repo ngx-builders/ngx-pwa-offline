@@ -1,8 +1,8 @@
 # Changelog
 
-## 9.0.0-rc.3 (2020-01-24)
+## 9.0.0 (2020-02-07)
 
-To update: `npm install @ngx-pwa/offline@next`
+To update: `npm install @ngx-pwa/offline@9`
 
 ### Feature
 

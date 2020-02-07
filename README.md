@@ -31,7 +31,7 @@ There are also other tools for offline management, like online status helpers an
 
 ```bash
 # Angular 9+
-npm install @ngx-pwa/offline@next
+npm install @ngx-pwa/offline@9
 
 # Angular 6 / 7 / 8
 npm install @ngx-pwa/offline@6

@@ -1,12 +1,12 @@
 {
   "name": "@ngx-pwa/offline",
-  "version": "9.0.0-rc.3",
+  "version": "9.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build ngx-pwa-offline --prod && copyfiles README.md LICENSE dist/ngx-pwa/offline",
     "lint": "ng lint",
-    "publish": "npm run lint && npm run build && npm publish dist/ngx-pwa/offline --access public --tag next"
+    "publish": "npm run lint && npm run build && npm publish dist/ngx-pwa/offline --access public"
   },
   "private": true,
   "dependencies": {
