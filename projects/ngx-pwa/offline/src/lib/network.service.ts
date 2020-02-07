@@ -1,7 +1,8 @@
 import { Injectable, Inject, PLATFORM_ID, Optional } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable, fromEvent, of, merge, OperatorFunction, EMPTY } from 'rxjs';
+import { Observable, fromEvent, of, merge, OperatorFunction, EMPTY, ObservableInput } from 'rxjs';
 import { catchError, mapTo, startWith } from 'rxjs/operators';
 
 import { OFFLINE_ROUTE_OFFLINE, OFFLINE_ROUTE_UNAVAILABLE } from './tokens';
@@ -22,11 +23,11 @@ export class Network {
   /** Do not use this method, use `catchOffline` function directly */
   static catchOffline<T>(): OperatorFunction<T, T> {
 
-    return catchError<T, T>(Network.catchCallback);
+    return catchError<T, ObservableInput<T>>(Network.catchCallback);
 
   }
 
-  protected static catchCallback<T>(error: any): Observable<T> {
+  protected static catchCallback<T>(error: unknown): Observable<T> {
 
     if (!Network.instance) {
 
@@ -48,7 +49,7 @@ export class Network {
 
         return EMPTY;
 
-      } else if (error.status && (error.status >= 500 && error.status < 600)) {
+      } else if ((error instanceof HttpErrorResponse) && (error.status >= 500 && error.status < 600)) {
 
         Network.instance.router.navigate([Network.instance.routeUnavailable]);
 

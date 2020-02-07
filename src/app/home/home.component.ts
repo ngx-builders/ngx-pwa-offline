@@ -11,13 +11,13 @@ import { catchOffline } from '@ngx-pwa/offline';
 })
 export class HomeComponent implements OnInit {
 
-  movies: any;
+  movies: unknown;
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
-    this.http.get('/api/cinema/movies').pipe(catchOffline()).subscribe((data) => {
+    this.http.get<unknown[]>('/api/cinema/movies').pipe(catchOffline()).subscribe((data) => {
       this.movies = data;
     });
 
