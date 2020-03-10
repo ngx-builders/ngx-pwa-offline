@@ -97,12 +97,31 @@ as the lib can't decide the content and design of these pages for you.
 
 If you want to change the redirection URLs:
 
+In version >= 9.1:
+```typescript
+import { OfflineModule } from '@ngx-pwa/offline';
+
+@NgModule({
+  imports: [
+    OfflineModule.forRoot({
+      routeOffline: '/oops/offline',
+      routeUnavailable: '/oops/unavailable',
+    })
+  ]
+})
+export class AppModule {}
+```
+
+In version < 9.1:
 ```typescript
 import { offlineProviders } from '@ngx-pwa/offline';
 
 @NgModule({
   providers: [
-    offlineProviders({ routeOffline: '/oops/offline', routeUnavailable: '/oops/unavailable' })
+    offlineProviders({
+      routeOffline: '/oops/offline',
+      routeUnavailable: '/oops/unavailable',
+    })
   ]
 })
 export class AppModule {}
@@ -179,6 +198,20 @@ const routes: Routes = [
 
 By default, guards will redirect to the `/offline` page (so your app must use Angular router: `RouterModule.forRoot()`).
 If you just want to block the navigation:
+
+In version >= 9.1:
+```typescript
+import { OfflineModule } from '@ngx-pwa/offline';
+
+@NgModule({
+  imports: [
+    OfflineModule.forRoot({ guardsRedirect: false })
+  ]
+})
+export class AppModule {}
+```
+
+In version < 9.1:
 ```typescript
 import { offlineProviders } from '@ngx-pwa/offline';
 
@@ -192,9 +225,7 @@ export class AppModule {}
 
 ## Angular support
 
-This lib supports Angular >= 6.
-
-The lib doesn't support Angular 5 and below.
+This lib follows Angular LTS support, ie. Angular >= 7 at the moment.
 
 This module supports [AoT pre-compiling](https://angular.io/guide/aot-compiler) and Ivy.
 

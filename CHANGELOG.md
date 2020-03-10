@@ -1,5 +1,48 @@
 # Changelog
 
+## 9.1.0 (2020-03-10)
+
+### Feature
+
+Add a new and more standard way to change lib options:
+
+Now in version >= 9.1:
+```typescript
+import { OfflineModule } from '@ngx-pwa/offline';
+
+@NgModule({
+  imports: [
+    OfflineModule.forRoot({
+      routeOffline: '/oops/offline',
+      routeUnavailable: '/oops/unavailable',
+    })
+  ]
+})
+export class AppModule {}
+```
+
+Previously in version < 9.1:
+```typescript
+import { offlineProviders } from '@ngx-pwa/offline';
+
+@NgModule({
+  providers: [
+    offlineProviders({
+      routeOffline: '/oops/offline',
+      routeUnavailable: '/oops/unavailable',
+    })
+  ]
+})
+export class AppModule {}
+```
+
+The old way is still available but is now deprecated and will be removed in v10.
+
+### Documentation
+
+Fix an issue with `catchOffline` operator documentation where the wrong JSDoc
+was displayed, wrongly indicating to not use it.
+
 ## 9.0.0 (2020-02-07)
 
 To update: `npm install @ngx-pwa/offline@9`
