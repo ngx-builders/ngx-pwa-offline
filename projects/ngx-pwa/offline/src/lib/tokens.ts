@@ -2,15 +2,15 @@ import { InjectionToken, Provider } from '@angular/core';
 
 export const OFFLINE_ROUTE_OFFLINE = new InjectionToken<string>('offline-config-route-offline', {
   providedIn: 'root',
-  factory: () => '/offline'
+  factory: () => '/offline',
  });
 export const OFFLINE_ROUTE_UNAVAILABLE = new InjectionToken<string>('offline-config-route-unavailable', {
   providedIn: 'root',
-  factory: () => '/unavailable'
+  factory: () => '/unavailable',
  });
 export const OFFLINE_GUARDS_REDIRECT = new InjectionToken<boolean>('offline-config-guards-redirect', {
   providedIn: 'root',
-  factory: () => true
+  factory: () => true,
  });
 
 export interface OfflineProvidersConfig {
@@ -25,6 +25,9 @@ export interface OfflineProvidersConfig {
   guardsRedirect?: boolean;
 }
 
+/**
+ * @deprecated Use `OfflineModule.forRoot()` instead
+ */
 export function offlineProviders(config: OfflineProvidersConfig): Provider[] {
 
   return [

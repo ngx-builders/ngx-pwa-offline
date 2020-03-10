@@ -20,7 +20,10 @@ export class Network {
     return isPlatformBrowser(this.platformId) ? navigator.onLine : true;
   }
 
-  /** Do not use this method, use `catchOffline` function directly */
+  /**
+   * Catch offline errors (no Internet connection) and server errors (HTTP status 5xx)
+   * and redirect to `/offline` or `/unavailable` page (routes can be changed via `OfflineModule.forRoot()`)
+   */
   static catchOffline<T>(): OperatorFunction<T, T> {
 
     return catchError<T, ObservableInput<T>>(Network.catchCallback);
@@ -92,6 +95,6 @@ export class Network {
 
 /**
  * Catch offline errors (no Internet connection) and server errors (HTTP status 5xx)
- * and redirect to /offline or /unavailable page (routes can be changed via offlineProviders())
+ * and redirect to `/offline` or `/unavailable` page (routes can be changed via `OfflineModule.forRoot()`)
  */
 export const catchOffline = Network.catchOffline;

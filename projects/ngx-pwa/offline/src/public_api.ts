@@ -8,3 +8,4 @@ export {
 } from './lib/tokens';
 export { Network, catchOffline } from './lib/network.service';
 export { OnlineGuard } from './lib/online.guard';
+export { OfflineModule } from './lib/offline.module';
