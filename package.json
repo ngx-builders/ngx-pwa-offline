@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build ngx-pwa-offline --prod && copyfiles README.md LICENSE dist/ngx-pwa/offline",
     "lint": "ng lint",
-    "publish": "npm run lint && npm run build && npm publish dist/ngx-pwa/offline --access public"
+    "release:patch": "npm run lint && npm run build && cd projects/ngx-pwa/offline && npm version patch && cd ../../.. && npm version patch && npm run build && npm publish dist/ngx-pwa/offline --access public && git push && git push --tags",
+    "release:minor": "npm run lint && npm run build && cd projects/ngx-pwa/offline && npm version minor && cd ../../.. && npm version minor && npm run build && npm publish dist/ngx-pwa/offline --access public && git push && git push --tags",
+    "release:major": "npm run lint && npm run build && cd projects/ngx-pwa/offline && npm version major && cd ../../.. && npm version major && npm run build && npm publish dist/ngx-pwa/offline --access public && git push && git push --tags"
   },
   "private": true,
   "dependencies": {
