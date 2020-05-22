@@ -31,10 +31,13 @@ There are also other tools for offline management, like online status helpers an
 **Install with npm** or another package manager:
 
 ```bash
-# Angular 9+
+# Angular 10
+npm install @ngx-pwa/offline@10
+
+# Angular 9
 npm install @ngx-pwa/offline@9
 
-# Angular 6 / 7 / 8
+# Angular 8
 npm install @ngx-pwa/offline@6
 ```
 
@@ -225,7 +228,7 @@ export class AppModule {}
 
 ## Angular support
 
-This lib follows Angular LTS support, ie. Angular >= 7 at the moment.
+This lib follows [Angular LTS](https://angular.io/guide/releases) support.
 
 This module supports [AoT pre-compiling](https://angular.io/guide/aot-compiler) and Ivy.
 
