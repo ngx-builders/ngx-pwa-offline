@@ -148,7 +148,6 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-pwa/offline/ng-package.prod.json",
               "tsConfig": "projects/ngx-pwa/offline/tsconfig.lib.prod.json"
             }
           }
