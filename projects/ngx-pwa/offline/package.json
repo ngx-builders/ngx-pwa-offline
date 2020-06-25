@@ -22,9 +22,9 @@
     "url": "https://github.com/cyrilletuzi/ngx-pwa-offline"
   },
   "peerDependencies": {
-    "@angular/common": "^10.0.0 || ^10.0.0-rc",
-    "@angular/core": "^10.0.0 || ^10.0.0-rc",
-    "@angular/router": "^10.0.0 || ^10.0.0-rc",
+    "@angular/common": "^10.0.0",
+    "@angular/core": "^10.0.0",
+    "@angular/router": "^10.0.0",
     "rxjs": "^6.5.3"
   },
   "dependencies": {

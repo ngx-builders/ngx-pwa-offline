@@ -1,8 +1,6 @@
 # Changelog
 
-## 10.0.0-0 (2020-05-22)
-
-This a pre-release version. **Do NOT use in production.**
+## 10.0.0 (2020-06-25)
 
 ### Feature
 
