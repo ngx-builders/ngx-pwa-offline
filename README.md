@@ -6,10 +6,9 @@ RxJS operator and other utils catching offline errors in Angular apps and PWA.
 
 - [Angular schematics extension for VS Code](https://marketplace.visualstudio.com/items?itemName=cyrilletuzi.angular-schematics) (GUI for Angular CLI commands)
 - [@ngx-pwa/local-storage](https://github.com/cyrilletuzi/angular-async-local-storage): Angular library for local storage
-- [typescript-strictly-typed](https://github.com/cyrilletuzi/typescript-strictly-typed): strict config for TypeScript, ESLint/TSLint and Angular
 - Popular [Angular posts on Medium](https://medium.com/@cyrilletuzi)
 - Follow updates of this lib on [Twitter](https://twitter.com/cyrilletuzi)
-- **[Angular onsite trainings](https://formationjavascript.com/formation-angular/)** (based in Paris, so the website is in French, but [my English bio is here](https://www.cyrilletuzi.com/en/) and I'm open to travel)
+- **[Angular onsite trainings](https://formationjavascript.com/formation-angular/)** (based in Paris, so the website is in French, but [my English bio is here](https://www.cyrilletuzi.com/en/))
 
 ## Why this lib?
 
@@ -228,7 +227,7 @@ export class AppModule {}
 
 ## Angular support
 
-This lib follows [Angular LTS](https://angular.io/guide/releases) support.
+This lib supports the last stable version of Angular.
 
 This module supports [AoT pre-compiling](https://angular.io/guide/aot-compiler) and Ivy.
 
