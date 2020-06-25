@@ -1,5 +1,13 @@
 # Changelog
 
+## 10.0.0 (2020-06-25)
+
+### Feature
+
+Supports and **requires** Angular 10.
+
+No lib change.
+
 ## 9.1.0 (2020-03-10)
 
 ### Feature
