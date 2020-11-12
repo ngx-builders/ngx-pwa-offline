@@ -7,8 +7,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to ngx-pwa-offline!');
+  it('should display welcome message', async () => {
+    await page.navigateTo();
+    const text = await page.getParagraphText();
+    expect(text).toEqual('Welcome to ngx-pwa-offline!');
   });
 });

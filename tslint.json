@@ -126,6 +126,7 @@
     "component-class-suffix": true,
     "directive-class-suffix": true,
     "no-any": true,
-    "typedef": [true, "call-signature"]
+    "typedef": [true, "call-signature"],
+    "template-no-any": true
   }
 }
