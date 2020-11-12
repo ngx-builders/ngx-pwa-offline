@@ -1,5 +1,13 @@
 # Changelog
 
+## 11.0.0 (2020-11-12)
+
+### Feature
+
+Supports and **requires** Angular 11.
+
+No lib change.
+
 ## 10.0.0 (2020-06-25)
 
 ### Feature

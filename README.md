@@ -6,6 +6,7 @@ RxJS operator and other utils catching offline errors in Angular apps and PWA.
 
 - [Angular schematics extension for VS Code](https://marketplace.visualstudio.com/items?itemName=cyrilletuzi.angular-schematics) (GUI for Angular CLI commands)
 - [@ngx-pwa/local-storage](https://github.com/cyrilletuzi/angular-async-local-storage): Angular library for local storage
+- [typescript-strictly-typed](https://github.com/cyrilletuzi/typescript-strictly-typed): reliable code with TypeScript strictly typed
 - Popular [Angular posts on Medium](https://medium.com/@cyrilletuzi)
 - Follow updates of this lib on [Twitter](https://twitter.com/cyrilletuzi)
 - **[Angular onsite trainings](https://formationjavascript.com/formation-angular/)** (based in Paris, so the website is in French, but [my English bio is here](https://www.cyrilletuzi.com/en/))
@@ -30,14 +31,14 @@ There are also other tools for offline management, like online status helpers an
 **Install with npm** or another package manager:
 
 ```bash
+# Angular 11
+npm install @ngx-pwa/offline@11
+
 # Angular 10
 npm install @ngx-pwa/offline@10
 
 # Angular 9
 npm install @ngx-pwa/offline@9
-
-# Angular 8
-npm install @ngx-pwa/offline@6
 ```
 
 Then you just have to **inject the `Network` service *at least once***, for example in `AppComponent`:
