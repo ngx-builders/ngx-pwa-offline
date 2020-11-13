@@ -236,7 +236,7 @@ This module supports [Universal server-side rendering](https://github.com/angula
 
 ## Changelog
 
-[Changelog available here](https://github.com/cyrilletuzi/ngx-pwa-offline/blob/master/CHANGELOG.md).
+[Changelog available here](https://github.com/cyrilletuzi/ngx-pwa-offline/blob/main/CHANGELOG.md).
 
 ## License
 
