@@ -1,5 +1,9 @@
 # Changelog
 
+## 11.1.0 (2021-01-21)
+
+No code change, just rebuilt with Angular 11.1.
+
 ## 11.0.0 (2020-11-12)
 
 ### Feature
