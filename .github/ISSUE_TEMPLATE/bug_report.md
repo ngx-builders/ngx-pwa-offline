@@ -7,6 +7,10 @@ assignees: ''
 
 ---
 
+<!-- Switch to the "Preview" tab to read the instructions more easily and be able to click on links directly -->
+
+Hi,
+
 # Checks before posting an issue
 
 - [ ] I have read all the library's documentation:
