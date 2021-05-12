@@ -4,20 +4,23 @@
   "newProjectRoot": "projects",
   "projects": {
     "demo": {
-      "root": "",
-      "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
           "inlineTemplate": true
+        },
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-pwa-offline",
+            "outputPath": "dist/demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,20 +32,20 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
+            "scripts": []
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "fileReplacements": [
@@ -51,15 +54,16 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
+              "outputHashing": "all"
             },
-            "development": {}
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
           },
           "defaultConfiguration": "production"
         },
@@ -91,14 +95,14 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
             "assets": [
               "src/favicon.ico",
               "src/assets"
-            ]
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
           }
         },
         "lint": {
@@ -115,53 +119,24 @@
         }
       }
     },
-    "demo-e2e": {
-      "root": "e2e/",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "demo:serve:production"
-            },
-            "development": {
-              "devServerTarget": "demo:serve:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "ngx-pwa-offline": {
+      "projectType": "library",
       "root": "projects/ngx-pwa/offline",
       "sourceRoot": "projects/ngx-pwa/offline/src",
-      "projectType": "library",
       "prefix": "ngx-pwa",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/ngx-pwa/offline/tsconfig.lib.json",
             "project": "projects/ngx-pwa/offline/ng-package.json"
           },
           "configurations": {
             "production": {
               "tsConfig": "projects/ngx-pwa/offline/tsconfig.lib.prod.json"
             },
-            "development": {}
+            "development": {
+              "tsConfig": "projects/ngx-pwa/offline/tsconfig.lib.json"
+            }
           },
           "defaultConfiguration": "production"
         },
@@ -188,5 +163,5 @@
       }
     }
   },
-  "defaultProject": "demo"
+  "defaultProject": "ngx-pwa-offline"
 }
