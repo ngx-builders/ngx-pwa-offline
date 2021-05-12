@@ -37,7 +37,9 @@ export class OnlineGuard implements CanActivate, CanActivateChild, CanLoad {
     if (!this.network.online) {
 
       if (this.guardsRedirect) {
-        this.router.navigate([this.routeOffline]);
+        this.router.navigate([this.routeOffline]).catch(() => {
+          // Nothing to do
+        });
       }
 
       return false;

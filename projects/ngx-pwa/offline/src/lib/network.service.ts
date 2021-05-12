@@ -48,13 +48,17 @@ export class Network {
 
       if (!Network.instance.online) {
 
-        Network.instance.router.navigate([Network.instance.routeOffline]);
+        Network.instance.router.navigate([Network.instance.routeOffline]).catch(() => {
+          // Nothing to do
+        });
 
         return EMPTY;
 
       } else if ((error instanceof HttpErrorResponse) && (error.status >= 500 && error.status < 600)) {
 
-        Network.instance.router.navigate([Network.instance.routeUnavailable]);
+        Network.instance.router.navigate([Network.instance.routeUnavailable]).catch(() => {
+          // Nothing to do
+        });
 
         return EMPTY;
 

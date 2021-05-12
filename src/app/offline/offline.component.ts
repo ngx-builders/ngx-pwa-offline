@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-offline',
@@ -9,11 +9,4 @@ import { Component, OnInit } from '@angular/core';
   `,
   styleUrls: ['./offline.component.css']
 })
-export class OfflineComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class OfflineComponent {}
