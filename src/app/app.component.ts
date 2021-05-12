@@ -5,7 +5,7 @@ import { Network } from '@ngx-pwa/offline';
   selector: 'app-root',
   template: `
     <p>
-      <ng-container *ngIf="online$ | async; else offline">Online</ng-container>
+      <ng-container *ngIf="online$ | async; else offline">Online</ng-container>
       <ng-template #offline>Offline</ng-template>
     </p>
     <router-outlet></router-outlet>

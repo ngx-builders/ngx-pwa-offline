@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-unavailable',
@@ -9,11 +9,4 @@ import { Component, OnInit } from '@angular/core';
   `,
   styleUrls: ['./unavailable.component.css']
 })
-export class UnavailableComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class UnavailableComponent {}
