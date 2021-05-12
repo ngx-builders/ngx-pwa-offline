@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build ngx-pwa-offline --prod && copyfiles README.md LICENSE dist/ngx-pwa/offline",
+    "build": "ng build ngx-pwa-offline && copyfiles README.md LICENSE dist/ngx-pwa/offline",
     "lint": "ng lint",
     "release:patch": "VERSION=patch npm run release && npm run githubrelease",
     "release:minor": "VERSION=minor npm run release && npm run githubrelease",
