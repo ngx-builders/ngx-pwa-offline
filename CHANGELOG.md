@@ -1,5 +1,13 @@
 # Changelog
 
+## 12.0.0 (2021-05-12)
+
+### Feature
+
+Supports and **requires** Angular 12.
+
+No lib change.
+
 ## 11.1.0 (2021-01-21)
 
 No code change, just rebuilt with Angular 11.1.
