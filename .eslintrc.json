@@ -10,32 +10,44 @@
       ],
       "parserOptions": {
         "project": [
-          "tsconfig.json",
-          "e2e/tsconfig.json"
+          "tsconfig.json"
         ],
         "createDefaultProgram": true
       },
       "extends": [
-        "plugin:@angular-eslint/recommended",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@angular-eslint/all",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
-        "@angular-eslint/component-selector": [
-          "error",
+        "quotes": "off",
+        "@typescript-eslint/quotes": [
+          "warn",
+          "single",
           {
-            "prefix": "app",
-            "style": "kebab-case",
-            "type": "element"
+            "allowTemplateLiterals": true
           }
         ],
-        "@angular-eslint/directive-selector": [
+        "max-len": [
           "error",
           {
-            "prefix": "app",
-            "style": "camelCase",
-            "type": "attribute"
+            "code": 140,
+            "ignoreTrailingComments": true
           }
-        ]
+        ],
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": true
+          }
+        ],
+        "@angular-eslint/prefer-on-push-component-change-detection": "off",
+        "@angular-eslint/component-max-inline-declarations": "off",
+        "@angular-eslint/use-component-selector": "off",
+        "@angular-eslint/sort-ngmodule-metadata-arrays": "off"
       }
     },
     {
@@ -43,9 +55,11 @@
         "*.html"
       ],
       "extends": [
-        "plugin:@angular-eslint/template/recommended"
+        "plugin:@angular-eslint/template/all"
       ],
-      "rules": {}
+      "rules": {
+        "@angular-eslint/template/i18n": "off"
+      }
     }
   ]
 }
