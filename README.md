@@ -39,9 +39,6 @@ npm install @ngx-pwa/offline@11
 
 # Angular 10
 npm install @ngx-pwa/offline@10
-
-# Angular 9
-npm install @ngx-pwa/offline@9
 ```
 
 Then you just have to **inject the `Network` service *at least once***, for example in `AppComponent`:
@@ -103,28 +100,12 @@ as the lib can't decide the content and design of these pages for you.
 
 If you want to change the redirection URLs:
 
-In version >= 9.1:
 ```typescript
 import { OfflineModule } from '@ngx-pwa/offline';
 
 @NgModule({
   imports: [
     OfflineModule.forRoot({
-      routeOffline: '/oops/offline',
-      routeUnavailable: '/oops/unavailable',
-    })
-  ]
-})
-export class AppModule {}
-```
-
-In version < 9.1:
-```typescript
-import { offlineProviders } from '@ngx-pwa/offline';
-
-@NgModule({
-  providers: [
-    offlineProviders({
       routeOffline: '/oops/offline',
       routeUnavailable: '/oops/unavailable',
     })
@@ -205,25 +186,12 @@ const routes: Routes = [
 By default, guards will redirect to the `/offline` page (so your app must use Angular router: `RouterModule.forRoot()`).
 If you just want to block the navigation:
 
-In version >= 9.1:
 ```typescript
 import { OfflineModule } from '@ngx-pwa/offline';
 
 @NgModule({
   imports: [
     OfflineModule.forRoot({ guardsRedirect: false })
-  ]
-})
-export class AppModule {}
-```
-
-In version < 9.1:
-```typescript
-import { offlineProviders } from '@ngx-pwa/offline';
-
-@NgModule({
-  providers: [
-    offlineProviders({ guardsRedirect: false })
   ]
 })
 export class AppModule {}
