@@ -7,8 +7,7 @@
 Allow RxJS 7 in peerDependencies, to align with Angular 12.2.
 
 Note that Angular and this lib are still built with RxJS 6,
-so while the tests with RxJS 7 seem to pass,
-be cautious if you want to upgrade RxJS right now without waiting for Angular 13.
+so be cautious if you want to upgrade RxJS right now without waiting for Angular 13.
 
 ## 12.0.1 (2021-05-12)
 
