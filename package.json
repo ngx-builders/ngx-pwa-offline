@@ -1,6 +1,6 @@
 {
   "name": "@ngx-pwa/offline",
-  "version": "12.0.1",
+  "version": "12.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
