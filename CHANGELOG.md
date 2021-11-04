@@ -1,5 +1,15 @@
 # Changelog
 
+## 13.0.0 (2021-11-04)
+
+### Feature
+
+Supports and **requires** Angular 13.
+
+While Angular 13 allows both RxJS 6 and RxJS >= 7.4, v13 of the lib does not officially support RxJS 6 anymore. It may work but has not been tested.
+
+No lib change.
+
 ## 12.1.0 (2021-08-05)
 
 ### Feature
