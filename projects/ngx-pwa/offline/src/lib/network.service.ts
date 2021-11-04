@@ -88,7 +88,9 @@ export class Network {
     }
 
     this.onlineChanges = !isPlatformBrowser(this.platformId) ? of(true) : merge(
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       fromEvent(window, 'online').pipe(mapTo(true)),
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       fromEvent(window, 'offline').pipe(mapTo(false)),
     )
     .pipe(startWith(this.online));
