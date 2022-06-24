@@ -157,5 +157,7 @@
       }
     }
   },
-  "defaultProject": "ngx-pwa-offline"
+  "cli": {
+    "analytics": false
+  }
 }

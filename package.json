@@ -1,10 +1,10 @@
 {
-  "name": "@ngx-pwa/offline",
-  "version": "12.1.0",
+  "name": "@ngx-builders/pwa-offline",
+  "version": "13.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build ngx-pwa-offline && copyfiles README.md LICENSE dist/ngx-pwa/offline",
+    "build": "ng build ngx-pwa-offline -c=production && copyfiles README.md LICENSE dist/ngx-pwa/offline",
     "lint": "ng lint",
     "release:patch": "VERSION=patch npm run release && npm run githubrelease",
     "release:minor": "VERSION=minor npm run release && npm run githubrelease",
@@ -16,25 +16,25 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^13.0.0",
-    "@angular/compiler": "^13.0.0",
-    "@angular/core": "^13.0.0",
-    "@angular/platform-browser": "^13.0.0",
-    "@angular/platform-browser-dynamic": "^13.0.0",
-    "@angular/router": "^13.0.0",
+    "@angular/common": "^14.0.3",
+    "@angular/compiler": "^14.0.3",
+    "@angular/core": "^14.0.3",
+    "@angular/platform-browser": "^14.0.3",
+    "@angular/platform-browser-dynamic": "^14.0.3",
+    "@angular/router": "^14.0.3",
     "rxjs": "^7.4.0",
     "tslib": "~2.3.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^13.0.1",
+    "@angular-devkit/build-angular": "^14.0.3",
     "@angular-eslint/builder": "13.0.0-alpha.0",
     "@angular-eslint/eslint-plugin": "13.0.0-alpha.0",
     "@angular-eslint/eslint-plugin-template": "13.0.0-alpha.0",
     "@angular-eslint/schematics": "13.0.0-alpha.0",
     "@angular-eslint/template-parser": "13.0.0-alpha.0",
-    "@angular/cli": "^13.0.1",
-    "@angular/compiler-cli": "^13.0.0",
+    "@angular/cli": "^14.0.3",
+    "@angular/compiler-cli": "^14.0.3",
     "@types/jasmine": "^3.6.3",
     "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
@@ -48,9 +48,9 @@
     "karma-coverage": "^2.0.3",
     "karma-jasmine": "^4.0.1",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "ng-packagr": "^13.0.0",
+    "ng-packagr": "^14.0.2",
     "protractor": "^7.0.0",
     "ts-node": "^10.1.0",
-    "typescript": "~4.4.4"
+    "typescript": "~4.7.4"
   }
 }
