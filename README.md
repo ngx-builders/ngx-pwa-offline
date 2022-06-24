@@ -2,14 +2,9 @@
 
 RxJS operator and other utils catching offline errors in Angular apps and PWA.
 
-## By the same author
+# FORK
 
-- [Angular schematics extension for VS Code](https://marketplace.visualstudio.com/items?itemName=cyrilletuzi.angular-schematics) (GUI for Angular CLI commands)
-- [@ngx-pwa/local-storage](https://github.com/cyrilletuzi/angular-async-local-storage): Angular library for local storage
-- [typescript-strictly-typed](https://github.com/cyrilletuzi/typescript-strictly-typed): reliable code with TypeScript strictly typed
-- Popular [Angular posts on Medium](https://medium.com/@cyrilletuzi)
-- Follow updates of this lib on [Twitter](https://twitter.com/cyrilletuzi)
-- **[Angular trainings](https://formationjavascript.com/formation-angular/)** (in French, as I'm based in Paris, but [my English bio is here](https://www.cyrilletuzi.com/en/) and it can be done remotely)
+This repo is maintained beacause the author of https://github.com/cyrilletuzi/ngx-pwa-offline decided to remove the code.
 
 ## Why this lib?
 
@@ -31,23 +26,16 @@ There are also other tools for offline management, like online status helpers an
 **Install with npm** or another package manager:
 
 ```bash
+npm i @ngx-builders/pwa-offline
 # Angular 13
 npm install @ngx-pwa/offline@13
 
-# Angular 12
-npm install @ngx-pwa/offline@12
-
-# Angular 11
-npm install @ngx-pwa/offline@11
-
-# Angular 10
-npm install @ngx-pwa/offline@10
 ```
 
 Then you just have to **inject the `Network` service *at least once***, for example in `AppComponent`:
 
 ```typescript
-import { Network } from '@ngx-pwa/offline';
+import { Network } from '@ngx-builders/pwa-offline';
 
 @Component()
 export class AppComponent {
@@ -66,7 +54,7 @@ Note: you may not use the service itself and just the RxJS operator, but an inje
 Just **use the `catchOffline` RxJS operator**:
 
 ```typescript
-import { catchOffline } from '@ngx-pwa/offline';
+import { catchOffline } from '@ngx-builders/pwa-offline';
 
 @Component({
   selector: 'some-page',
@@ -104,7 +92,7 @@ as the lib can't decide the content and design of these pages for you.
 If you want to change the redirection URLs:
 
 ```typescript
-import { OfflineModule } from '@ngx-pwa/offline';
+import { OfflineModule } from '@ngx-builders/pwa-offline';
 
 @NgModule({
   imports: [
@@ -126,7 +114,7 @@ Note: you need to provide the full URL, so *the leading `/` is required*.
 To check online status at some point:
 
 ```typescript
-import { Network } from '@ngx-pwa/offline';
+import { Network } from '@ngx-builders/pwa-offline';
 
 @Component({
   template: `
@@ -148,7 +136,7 @@ export class SomePageComponent implements OnInit {
 To observe when online status changes:
 
 ```typescript
-import { Network } from '@ngx-pwa/offline';
+import { Network } from '@ngx-builders/pwa-offline';
 
 @Component({
   template: `
@@ -179,7 +167,7 @@ the browser will still says it's online.
 Guards catching offline errors are also available, for `CanActivate`, `CanActivateChild` and `CanLoad`. For example:
 
 ```typescript
-import { OnlineGuard } from '@ngx-pwa/offline';
+import { OnlineGuard } from '@ngx-builders/pwa-offline';
 
 const routes: Routes = [
   { path: 'some-page', component: SomePageComponent, canActivate: [OnlineGuard] }
@@ -190,7 +178,7 @@ By default, guards will redirect to the `/offline` page (so your app must use An
 If you just want to block the navigation:
 
 ```typescript
-import { OfflineModule } from '@ngx-pwa/offline';
+import { OfflineModule } from '@ngx-builders/pwa-offline';
 
 @NgModule({
   imports: [
@@ -208,9 +196,6 @@ This module supports [AoT pre-compiling](https://angular.io/guide/aot-compiler) 
 
 This module supports [Universal server-side rendering](https://github.com/angular/universal).
 
-## Changelog
-
-[Changelog available here](https://github.com/cyrilletuzi/ngx-pwa-offline/blob/main/CHANGELOG.md).
 
 ## License
 

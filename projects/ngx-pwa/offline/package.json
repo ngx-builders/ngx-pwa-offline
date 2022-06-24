@@ -1,30 +1,30 @@
 {
-  "name": "@ngx-pwa/offline",
-  "version": "12.1.0",
+  "name": "@ngx-builders/pwa-offline",
+  "version": "13.0.0",
   "description": "RxJS operator and other utils catching offline errors in Angular apps and PWA",
   "author": "Cyrille Tuzi",
   "license": "MIT",
   "keywords": [
     "angular",
-    "angular13",
-    "angular 13",
+    "angular14",
+    "angular 14",
     "rxjs",
     "offline",
     "PWA",
     "progressive web app"
   ],
-  "homepage": "https://github.com/cyrilletuzi/ngx-pwa-offline",
+  "homepage": "https://github.com/santoshyadavdev/ngx-pwa-offline",
   "bugs": {
-    "url": "https://github.com/cyrilletuzi/ngx-pwa-offline/issues"
+    "url": "https://github.com/santoshyadavdev/ngx-pwa-offline/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cyrilletuzi/ngx-pwa-offline"
+    "url": "https://github.com/santoshyadavdev/ngx-pwa-offline"
   },
   "peerDependencies": {
-    "@angular/common": "^13.0.0",
-    "@angular/core": "^13.0.0",
-    "@angular/router": "^13.0.0",
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@angular/router": "^14.0.0",
     "rxjs": "^7.4.0"
   },
   "dependencies": {
