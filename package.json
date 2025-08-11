@@ -51,6 +51,6 @@
     "ng-packagr": "^14.0.2",
     "protractor": "^7.0.0",
     "ts-node": "^10.1.0",
-    "typescript": "~4.7.4"
+    "typescript": "~4.9.0"
   }
 }
